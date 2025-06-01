@@ -8,6 +8,7 @@ class Player extends Actor {
       vel: new Vector(0, 0), // Initial velocity
       width: 50, // Adjust as necessary
       height: 50, // Adjust as necessary
+      collisionType: CollisionType.Active 
     });
     this.graphics.use(image.toSprite());
     this.scale = new Vector(0.5, 0.5);
