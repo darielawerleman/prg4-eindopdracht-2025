@@ -2,6 +2,7 @@ import { Actor, Vector, Input } from 'excalibur';
 import { Bullet } from './bullet.js';
 
 class Player extends Actor {
+  
   constructor(image, pos, keyBindings) {
     super({
       pos: pos || new Vector(400, 300), // Initial position
