@@ -1,7 +1,7 @@
 body {
+    display: flex;
     margin: 0;
     padding: 0;
-    background-color: rgb(61, 61, 61);
-    display: flex;
+    background-color: darkgray;
     justify-content: center;
 }
