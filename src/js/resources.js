@@ -8,7 +8,7 @@ const Resources = {
   Meteor: new ImageSource('images/meteor.png'),
   IntroBackground: new ImageSource('images/pinkgalaxy.png'),
   Player2: new ImageSource('images/player2.png'),
-  // Nicki: new ImageSource('image/nicki.png')
+  Nicki: new ImageSource('image/nicki.png')
 }
 const ResourceLoader = new Loader([
     Resources.Player,
@@ -17,8 +17,8 @@ const ResourceLoader = new Loader([
     Resources.Enemy,
     Resources.Meteor,
     Resources.IntroBackground,
-    Resources.Player2
-    // Resources.Nicki,
+    Resources.Player2,
+    Resources.Nicki
 ])
 
 export { Resources, ResourceLoader }

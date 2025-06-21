@@ -14,6 +14,19 @@
       
           introBackground.graphics.use(Resources.IntroBackground.toSprite());
           this.add(introBackground);
+
+          const nicki = new Actor({
+            pos: new Vector(engine.drawWidth / 2 - 220, 490), // Position it next to the text
+            scale: new Vector(0.3, 0.3) // Scale the image to 0.3
+          });
+
+          nicki.graphics.use(Resources.Nicki.toSprite)
+          this.add(nicki); 
+          
+
+
+
+          
       
           // Add any additional elements like a title or start button here
           const startButton = new StartButton();
