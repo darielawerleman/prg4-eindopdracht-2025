@@ -1,16 +1,5 @@
 import "../css/style.css";
-import {
-  Engine,
-  Vector,
-  DisplayMode,
-  Timer,
-  Scene,
-  Input,
-  Label,
-  Font,
-  FontUnit,
-  Color,
-} from "excalibur";
+import {Engine, Vector, DisplayMode, Timer, Scene, Input, Label, Font, FontUnit, Color,} from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
 import { Player } from "./player.js";
 import ScrollingBackground from "./galaxy.js";
@@ -54,7 +43,6 @@ export class Game extends Engine {
     scene.onInitialize = (engine) => {
       console.log("Starting the game!");
 
-      // Create and add score label
       this.scoreLabel = new Label({
         text: `Score: ${this.score}`,
         pos: new Vector(50, 100),

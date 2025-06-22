@@ -2,18 +2,20 @@ import { Actor, Vector, Input, CollisionType } from 'excalibur';
 import { Bullet } from './bullet.js';
 
 class Player extends Actor {
+  #score;
   constructor(image, pos, keyBindings) {``
     super({
       pos: pos || new Vector(400, 300), // Initial position
       vel: new Vector(0, 0), // Initial velocity
-      width: 50, // Adjust as necessary
-      height: 50, // Adjust as necessary
+      width: 50, 
+      height: 50, 
       collisionType: CollisionType.Active,
     });
     this.graphics.use(image.toSprite());
     this.scale = new Vector(0.5, 0.5);
     this.keyBindings = keyBindings;
     this.engine = null;
+    this.#score = 0;
   }
 
   onInitialize(engine) {
@@ -26,13 +28,13 @@ class Player extends Actor {
 
   handleKeyHold(evt) {
     if (evt.key === this.keyBindings.left) {
-      this.vel.x = -300; // Adjust speed as necessary
+      this.vel.x = -300; // Adjust speed 
     } else if (evt.key === this.keyBindings.right) {
-      this.vel.x = 300; // Adjust speed as necessary
+      this.vel.x = 300; 
     } else if (evt.key === this.keyBindings.up) {
-      this.vel.y = -300; // Adjust speed as necessary
+      this.vel.y = -300; 
     } else if (evt.key === this.keyBindings.down) {
-      this.vel.y = 300; // Adjust speed as necessary
+      this.vel.y = 300; 
     }
   }
 
@@ -53,7 +55,7 @@ class Player extends Actor {
   shoot() {
     const bullet = new Bullet(
       new Vector(this.pos.x, this.pos.y - this.height / 2),
-      new Vector(0, -400) // Bullet speed, adjust as necessary
+      new Vector(0, -400) // Bullet speed
     );
     this.engine.add(bullet);
   }

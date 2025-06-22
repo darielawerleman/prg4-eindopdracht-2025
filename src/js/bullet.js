@@ -1,14 +1,14 @@
 import { Actor, Vector, CollisionType } from 'excalibur';
 import { Resources } from './resources.js';
 
-class Bullet extends Actor {
+export class Bullet extends Actor {
   constructor(pos, vel) {
     super({
       pos: pos,
       vel: vel,
-      width: 5, // Adjust as necessary
-      height: 10, // Adjust as necessary
-      collisionType: CollisionType.Passive // Enable collision detection
+      width: 5, 
+      height: 10, 
+      collisionType: CollisionType.Passive 
     });
     this.graphics.use(Resources.Bullet.toSprite());
   }
@@ -23,4 +23,4 @@ class Bullet extends Actor {
   }
 }
 
-export { Bullet };
+

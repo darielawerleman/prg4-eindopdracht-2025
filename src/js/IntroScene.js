@@ -4,23 +4,25 @@
       import { StartButton } from './button.js';
       
       class IntroScene extends Scene {
+        #introBackground;
+        #startButton;
         onInitialize(engine) {
           // Create the background actor
-          const introBackground = new Actor({
+          this.#introBackground = new Actor({
             pos: new Vector(engine.drawWidth / 2, engine.drawHeight / 2),
             width: engine.drawWidth,
             height: engine.drawHeight,
           });
       
-          introBackground.graphics.use(Resources.IntroBackground.toSprite());
-          this.add(introBackground);
+          this.#introBackground.graphics.use(Resources.IntroBackground.toSprite());
+          this.add(this.#introBackground);
       
           // Add any additional elements like a title or start button here
-          const startButton = new StartButton();
-          this.add(startButton);
+          this.#startButton = new StartButton();
+          this.add(this.#startButton);
       
           // Handle button click event to start the game
-          startButton.on('startgame', () => {
+          this.#startButton.on('startgame', () => {
             engine.goToScene('main');
           });
         }
