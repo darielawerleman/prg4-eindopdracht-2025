@@ -1,3 +1,0 @@
-shooting * 
-multiplayer
-change the ship spawning position 
