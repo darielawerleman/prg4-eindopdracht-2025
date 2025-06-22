@@ -13,6 +13,7 @@ class Player extends Actor {
     this.scale = new Vector(0.5, 0.5);
     this.keyBindings = keyBindings;
     this.engine = null;
+    this.collisionType = CollisionType.Active;
   }
 
   onInitialize(engine) {
