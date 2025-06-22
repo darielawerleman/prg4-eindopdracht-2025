@@ -21,14 +21,21 @@ export class Enemy extends Actor {
 
   handleCollision(evt) {
     if (evt.other instanceof Bullet) {
-      evt.other.kill();  // Destroy the bullet
-      this.kill();       // Destroy the enemy
+      evt.other.kill();  // Destroy bullet
+      this.kill();       // Destroy enemy
+
+      if (this.onKilledByPlayer) {
+        this.onKilledByPlayer();  // Update score
+      }
     }
+  }
+
+  setKillCallback(callback) {
+    this.onKilledByPlayer = callback;
   }
 
   update(engine, delta) {
     super.update(engine, delta);
-
     if (this.pos.y > engine.drawHeight || this.pos.x < 0 || this.pos.x > engine.drawWidth) {
       this.kill();
     }

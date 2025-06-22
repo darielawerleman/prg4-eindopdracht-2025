@@ -1,4 +1,4 @@
-import { Actor, Vector, Input } from 'excalibur';
+import { Actor, Vector, Input, CollisionType } from 'excalibur';
 import { Bullet } from './bullet.js';
 
 class Player extends Actor {
